@@ -1,14 +1,16 @@
-import anime from 'animejs/lib/anime.es.js'
 let _w = window.innerWidth
 let _h = window.innerHeight
-const buttons = [...document.querySelectorAll("div[class^='button'")]
-
+const container = document.querySelector(".container")
+let buttons = container.querySelectorAll("div[class^='button'")
 
 buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        console.log("click")
+    button.addEventListener("click", (e) => {
+        e.preventDefault
+        button.classList.remove("click_anim")
+        void button.offsetWidth // makes the button to reflow and reset the animation
+        button.classList.add("click_anim")
     })
-});
+})
 
 window.addEventListener("resize", () => {
     _w = window.innerWidth
@@ -23,11 +25,3 @@ function setup() {
 function draw() {
     background(0)
 }
-
-anime({
-    targets: 'div',
-    translateX: 250,
-    rotate: '1turn',
-    backgroundColor: '#FFF',
-    duration: 800
-  });

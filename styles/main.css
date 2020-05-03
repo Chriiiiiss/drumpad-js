@@ -30,6 +30,21 @@ div[class^="button"] {
     grid-gap: 20px;
 }
 
+.click_anim {
+    animation: clickedPad 0.5s linear;
+}
+
+@keyframes clickedPad {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 
 .button_1 {
