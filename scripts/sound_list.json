@@ -1,18 +1,9 @@
-{
-    "soundList" : [
-        {"id": 0,
-         "url": "../sounds/aweyeah.mp3"},
-        {"id": 1,
-         "url": "../sounds/drake-ugh.mp3"},
-        {"id": 2,
-         "url": "../sounds/drake-yeauh.mp3"},
-        {"id": 3,
-         "url": "../sounds/ha.mp3"},
-        {"id": 4,
-         "url": "../sounds/hey.mp3"},
-        {"id": 5,
-         "url": "../sounds/holdup.mp3"},
-        {"id": 6,
-         "url": "../sounds/huh.mp3"}
-    ]
-}
+{"soundList" : [
+         "../sounds/aweyeah.mp3",
+         "../sounds/drake-ugh.mp3",
+         "../sounds/drake-yeauh.mp3",
+         "../sounds/ha.mp3",
+         "../sounds/hey.mp3",
+         "../sounds/holdup.mp3",
+         "../sounds/huh.mp3"
+    ]}
