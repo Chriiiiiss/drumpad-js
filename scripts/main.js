@@ -95,7 +95,7 @@ function draw() {
         let y = radius * sin(i)
         stroke(i, 255, 255)
         fill(i, 255, 255)
-        rect(0,0, x, y, 100)
+        line(0,0, x, y)
     }
     endShape()
     
