@@ -5,8 +5,11 @@ const buttons = container.querySelectorAll("div[class^='button'")
 let currentAudio
 let amplitude
 let soundList
-let rgbG = 0
-let rgbR = 0
+let radius = 0
+const MAX_DEGREE = 360
+const LINE_MAX_HEIGHT = 400
+const LINE_MIN_HEIGHT = 150
+
 class sound {
     constructor(id, url) {
         this.id = id,
@@ -45,17 +48,26 @@ function setup() {
     createCanvas(_w, _h)
     buttons.forEach(button => {
         button.addEventListener("click", (e) => {
-            e.preventDefault
+            e.preventDefault     
             button.classList.remove("click_anim")
             void button.offsetWidth // makes the button to reflow and reset the animation
             button.classList.add("click_anim")
             currentAudio = soundList[button.attributes[1].value].url
-            if (currentAudio.isPlaying() === false) playAudio(currentAudio)
-            else currentAudio.stop()
-            
+            if (currentAudio.isPlaying() === false && isLoop(button) === true) {
+                currentAudio.loop()
+            } else {
+                currentAudio.stop()
+            }
+            if (currentAudio.isPlaying() === false && isLoop(button) === false) {
+                playAudio(currentAudio)
+            }        
         })
     })
     amplitude = new p5.Amplitude()
+}
+
+function isLoop(button) {
+    return app = (button.classList[1] === "loop") ? true : false
 }
 
 function draw() {
@@ -65,27 +77,29 @@ function draw() {
     let vol = amplitude.getLevel()
     historyBeats.push(vol)
     // fill(Math.random() * 255, Math.random() * 255, 0)
-    noFill()
+    // noFill()
     translate(width / 2, height / 2)
+    if (radius > 350) {
+        background(270, 100, 37)
+        
+    }
     beginShape()
-    for (let i = 0; i < 360 ; i++) {
+    for (let i = 0; i < MAX_DEGREE ; i++) {
         if (historyBeats[i]) {
-            radius = map(historyBeats[i], 0, 0.5, 100, 500)
+            radius = map(historyBeats[i], 0, 0.5, LINE_MIN_HEIGHT, LINE_MAX_HEIGHT)
         } else {
-            radius = map(0, 0, 0.5, 100, 500)
+            radius = map(0, 0, 0.5, LINE_MIN_HEIGHT, LINE_MAX_HEIGHT)
         }
+
         let x = radius * cos(i)
         let y = radius * sin(i)
-        // let y = map(historyBeats[i], 0, 0.5, _h / 2, 0)
         stroke(i, 255, 255)
-        line(0,0, x, y)
+        fill(i, 255, 255)
+        rect(0,0, x, y, 100)
     }
     endShape()
-
+    
     if (historyBeats.length > 360) {
         historyBeats.splice(0 , 1)
     }
-
-    // stroke(255, 0, 0)
-    // line(historyBeats.length, 0, historyBeats.length, _h)
 }
