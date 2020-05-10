@@ -82,7 +82,7 @@ div[class^="button"] {
 }
 
 .checkbox:checked + .fft{
-    color: red;
+    color: blueviolet;
 }
 
 .container_pads {

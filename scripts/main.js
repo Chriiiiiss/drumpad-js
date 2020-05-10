@@ -99,24 +99,14 @@ function draw() {
     vol = amplitude.getLevel()
     historyBeats.push(vol)
     fill(Math.random() * 255, Math.random() * 255, 0)
-    noFill()
+    if (radius > 350) background(270, 100, 37)     
     translate(width / 2, height / 2)
-    if (radius > 350) {
-        background(270, 100, 37)
-        
-    }
     beginShape()
-    if (switchElem.checked) {
-        fftRadial()
-        
-    } else {
-        ampRadial()
-    }
+    if (switchElem.checked) fftRadial() 
+    else ampRadial()
     endShape()
     
-    if (historyBeats.length > 360) {
-        historyBeats.splice(0 , 1)
-    }
+    if (historyBeats.length > 360) historyBeats.splice(0 , 1)
 }
 
 
