@@ -46,17 +46,24 @@ window.addEventListener("resize", () => {
 
 function preload() {
     soundList = [
-        new sound(0,loadSound("./sounds/aweyeah.mp3")),
-        new sound(1,loadSound("./sounds/drake-ugh.mp3")),
-        new sound(2,loadSound("./sounds/drake-yeauh.mp3")),
-        new sound(3,loadSound("./sounds/ha.mp3")),
-        new sound(4,loadSound("./sounds/hey.mp3")),
-        new sound(5,loadSound("./sounds/holdup.mp3")),
-        new sound(6,loadSound("./sounds/huh.mp3")),
-        new sound(7,loadSound("./sounds/jyea.mp3")),
-        new sound(8,loadSound("./sounds/khaled.mp3")),
-        new sound(9,loadSound("./sounds/ugh.mp3")),
-        new sound(10,loadSound("./sounds/moonlight.mp3"))
+        new sound(0,loadSound("./sounds/808_deep.wav")),
+        new sound(1,loadSound("./sounds/808_knaw.wav")),
+        new sound(2,loadSound("./sounds/808_over.wav")),
+        new sound(3,loadSound("./sounds/noise.wav")),
+        new sound(4,loadSound("./sounds/crash.wav")),
+        new sound(4,loadSound("./sounds/khaled.mp3")),
+        new sound(5,loadSound("./sounds/what.wav")),
+        new sound(6,loadSound("./sounds/who.wav")),
+        new sound(7,loadSound("./sounds/kick.wav")),
+        new sound(8,loadSound("./sounds/kick_drop.wav")),
+        new sound(9,loadSound("./sounds/hit_open.wav")),
+        new sound(10,loadSound("./sounds/hit_close.wav")),
+        new sound(11,loadSound("./sounds/orch.wav")),
+        new sound(12,loadSound("./sounds/snare.wav")),
+        new sound(13,loadSound("./sounds/night_ride_free.mp3")),
+        new sound(14,loadSound("./sounds/guitar_loop.wav")),
+        new sound(15,loadSound("./sounds/guitar_latin_loop.wav")),
+        new sound(16,loadSound("./sounds/free_beats.mp3")),
     ]
 }
 
@@ -99,7 +106,7 @@ function draw() {
     vol = amplitude.getLevel()
     historyBeats.push(vol)
     fill(Math.random() * 255, Math.random() * 255, 0)
-    if (radius > 350) background(270, 100, 37)     
+    if (radius > 350) background(270, 100, 37)
     translate(width / 2, height / 2)
     beginShape()
     if (switchElem.checked) fftRadial() 
