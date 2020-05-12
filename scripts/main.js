@@ -63,7 +63,7 @@ function preload() {
         new sound(13,loadSound("./sounds/night_ride_free.mp3")),
         new sound(14,loadSound("./sounds/guitar_loop.wav")),
         new sound(15,loadSound("./sounds/guitar_latin_loop.wav")),
-        new sound(16,loadSound("./sounds/Dragon.mp3")),
+        new sound(16,loadSound("./sounds/free_beats.mp3")),
     ]
 }
 
