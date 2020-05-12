@@ -159,6 +159,10 @@ div[class^="button"] rect {
     transition: all 0.2s ease-in;
 }
 
+.active {
+    border: 5px solid #db5657;
+}
+
 .blue rect:hover {
     fill: #86D3F1;
 }

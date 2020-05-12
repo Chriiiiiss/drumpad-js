@@ -1,0 +1,129 @@
+:root {
+    --bg_color: #121212;
+    --primary_color: #BB86FC;
+    --primary_color_var: #3700B3;
+    --secondary_color: #03DAC6;
+    --text_on_primary: #000000;
+    --text_on_bg: #fff;
+    font-family: 'Exo 2', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--bg_color);
+    height: 10vh;
+    border-bottom: 5px solid var(--primary_color_var);
+} 
+
+.title {
+    padding: 0 15px;
+    font-size: 2rem;
+    border-right: 5px solid var(--primary_color_var);
+    border-left: 5px solid var(--primary_color_var);
+    color: var(--primary_color);
+}
+
+main {
+    height: 80vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--bg_color);
+}
+
+footer {
+    height: 10vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: var(--bg_color);
+    /* border-top: 5px solid var(--primary_color_var); */
+
+}
+
+.copyright {
+    font-size: 1.1em;
+    color: var(--primary_color);
+}
+
+.container {
+    width: 95vw;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 20vh 1fr;
+    grid-gap: 10px;
+    background-color: var(--secondary_color);
+}
+
+.instru_type_container {
+    background-color: var(--primary_color_var);
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    overflow: hidden;
+}
+
+.instru_beat_container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    background-color: var(--primary_color);
+    overflow: hidden;
+}
+
+.instru_beat {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    padding: 7.5px 16px;
+    grid-template-columns: repeat(auto-fill, 25px);
+    grid-template-rows: repeat(2, 25px);
+    grid-gap: 10px;
+    background-color: palegreen;
+    margin-bottom: 10px;
+}
+
+.beat_frame {
+    width: 100%;
+    height: 100%;
+    background-color: orchid;
+}
+
+.beat_frame_add {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-size: 1.2em;
+    background-color: orchid;
+}
+
+.instru_hit {
+    display: grid;
+    justify-items: center;
+    grid-template-rows: repeat(3, 1fr);
+    background-color: yellow;
+}
+
+.instru_clap {
+    display: grid;
+    justify-items: center;
+    grid-template-rows: repeat(3, 1fr);
+    background-color: orange;
+}
+
+.instru_title {
+    font-size: 1.2em;
+    color: var(--text_on_primary);
+}
+
+.change_instru_up, .change_instru_down {
+    font-size: 1.5em;
+}

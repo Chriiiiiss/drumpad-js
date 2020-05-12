@@ -63,7 +63,7 @@ function preload() {
         new sound(13,loadSound("./sounds/night_ride_free.mp3")),
         new sound(14,loadSound("./sounds/guitar_loop.wav")),
         new sound(15,loadSound("./sounds/guitar_latin_loop.wav")),
-        new sound(16,loadSound("./sounds/free_beats.mp3")),
+        new sound(16,loadSound("./sounds/Dragon.mp3")),
     ]
 }
 
@@ -82,9 +82,11 @@ function setup() {
             button.classList.add("click_anim")
             currentAudio = soundList[button.attributes[1].value].url
             if (currentAudio.isPlaying() === false && isLoop(button) === true) {
+                button.classList.add("active")
                 currentAudio.loop()
             } else {
                 currentAudio.stop()
+                button.classList.remove("active")
             }
             if (currentAudio.isPlaying() === false && isLoop(button) === false) {
                 currentAudio.play()
@@ -132,7 +134,7 @@ function fftRadial() {
         let y = radius * sin(angle)
         stroke(i, 255, 255)
         fill(i, 255, 255)
-        line(0, 0, x, y)
+        rect(0, 0, x, y)
     }
 }
 
@@ -149,8 +151,11 @@ function ampRadial() {
         let x = radius * cos(i)
         let y = radius * sin(i)
         stroke(i, 255, 255)
-        fill(i, 255, 255)
-        line (0,0, x, y)
+        fill(Math.random() * 255, Math.random() * 255, Math.random() * 255)
+        // noFill()
+        line(0, 0, x, y)
+        stroke(Math.random() * 255, Math.random() * 255, Math.random() * 255)
+        vertex(x, y)
     }
 }
 
@@ -159,4 +164,9 @@ function ampRadial() {
 
 function isLoop(button) {
     return app = (button.classList[1] === "loop") ? true : false
+}
+
+
+function Vit(x) {
+    return (x < 15) ? x * 30 : 600
 }
