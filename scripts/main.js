@@ -133,8 +133,9 @@ function fftRadial() {
         let x = radius * cos(angle)
         let y = radius * sin(angle)
         stroke(i, 255, 255)
-        fill(i, 255, 255)
-        rect(0, 0, x, y)
+        // fill(i, 255, 255)
+        line(0, 0, x, y)
+    //     rect(0, 0, x, y)
     }
 }
 
@@ -151,9 +152,10 @@ function ampRadial() {
         let x = radius * cos(i)
         let y = radius * sin(i)
         stroke(i, 255, 255)
-        fill(Math.random() * 255, Math.random() * 255, Math.random() * 255)
-        // noFill()
+        // fill(Math.random() * 255, Math.random() * 255, Math.random() * 255)
+        noFill()
         line(0, 0, x, y)
+        // rect(0, 0, x, y)
         stroke(Math.random() * 255, Math.random() * 255, Math.random() * 255)
         vertex(x, y)
     }
@@ -164,9 +166,4 @@ function ampRadial() {
 
 function isLoop(button) {
     return app = (button.classList[1] === "loop") ? true : false
-}
-
-
-function Vit(x) {
-    return (x < 15) ? x * 30 : 600
 }
